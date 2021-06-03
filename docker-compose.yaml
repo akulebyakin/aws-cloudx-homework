@@ -1,0 +1,7 @@
+version: '3.4'
+
+services:
+  product-api:
+    image: product_api
+    ports:
+      - "8080:8080"
