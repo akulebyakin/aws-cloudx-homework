@@ -30,6 +30,9 @@ public class Product {
     @Column(nullable = false)
     private Double price;
 
+    @Column(nullable = false)
+    private Integer balance;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 

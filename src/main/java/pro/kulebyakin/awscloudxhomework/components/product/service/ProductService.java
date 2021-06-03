@@ -23,10 +23,19 @@ public class ProductService extends CrudService<Product> {
         return get(productId);
     }
 
-    public Product addProduct(ProductDto productDto) {
+    public Product createNewProduct(ProductDto productDto) {
         Product product = new Product()
                 .setName(productDto.getName())
-                .setPrice(productDto.getPrice());
+                .setPrice(productDto.getPrice())
+                .setBalance(0);
+        return save(product);
+    }
+
+    public Product addProductById(Long id, Integer addQuantity) {
+        Product product = get(id);
+        Integer currentBalance = product.getBalance();
+        Integer newBalance = currentBalance + addQuantity;
+        product.setBalance(newBalance);
         return save(product);
     }
 }

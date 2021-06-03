@@ -7,7 +7,7 @@ import pro.kulebyakin.awscloudxhomework.core.exceptions.NotFoundException;
 import java.util.List;
 import java.util.Optional;
 
-@Transactional(readOnly = true)
+@Transactional
 public abstract class CrudService<T> {
 
     public List<T> getAll() {
