@@ -1,5 +1,6 @@
 package pro.kulebyakin.awscloudxhomework.components.product.controller;
 
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,10 +14,8 @@ import pro.kulebyakin.awscloudxhomework.components.product.dto.ProductDto;
 import pro.kulebyakin.awscloudxhomework.components.product.model.Product;
 import pro.kulebyakin.awscloudxhomework.components.product.service.ProductService;
 
-import java.util.List;
-
 @RestController
-@RequestMapping("/product")
+@RequestMapping({"/product", "/products"})
 @RequiredArgsConstructor
 public class ProductController {
 
