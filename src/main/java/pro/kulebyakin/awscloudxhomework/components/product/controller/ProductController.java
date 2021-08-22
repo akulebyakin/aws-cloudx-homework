@@ -31,7 +31,7 @@ public class ProductController {
         return productService.getById(id);
     }
 
-    @RequestMapping(value = {"/create"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/create", "/register"}, method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public Product createNewProduct(@RequestBody ProductDto product) {
         return productService.createNewProduct(product);

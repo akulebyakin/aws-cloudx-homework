@@ -58,6 +58,46 @@
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>1.5.9</version>
         </dependency>
+        <dependency>
+            <artifactId>aws-xray-recorder-sdk-core</artifactId>
+            <groupId>com.amazonaws</groupId>
+            <version>2.9.1</version>
+        </dependency>
+        <dependency>
+            <artifactId>aws-xray-recorder-sdk-apache-http</artifactId>
+            <groupId>com.amazonaws</groupId>
+            <version>2.9.1</version>
+        </dependency>
+        <dependency>
+            <artifactId>aws-xray-recorder-sdk-aws-sdk</artifactId>
+            <groupId>com.amazonaws</groupId>
+            <version>2.9.1</version>
+        </dependency>
+        <dependency>
+            <artifactId>aws-xray-recorder-sdk-aws-sdk-v2</artifactId>
+            <groupId>com.amazonaws</groupId>
+            <version>2.9.1</version>
+        </dependency>
+        <dependency>
+            <artifactId>aws-xray-recorder-sdk-aws-sdk-instrumentor</artifactId>
+            <groupId>com.amazonaws</groupId>
+            <version>2.9.1</version>
+        </dependency>
+        <dependency>
+            <artifactId>aws-xray-recorder-sdk-aws-sdk-v2-instrumentor</artifactId>
+            <groupId>com.amazonaws</groupId>
+            <version>2.9.1</version>
+        </dependency>
+        <dependency>
+            <artifactId>aws-xray-recorder-sdk-sql-mysql</artifactId>
+            <groupId>com.amazonaws</groupId>
+            <version>2.9.1</version>
+        </dependency>
+        <dependency>
+            <artifactId>aws-xray-recorder-sdk-spring</artifactId>
+            <groupId>com.amazonaws</groupId>
+            <version>2.9.1</version>
+        </dependency>
     </dependencies>
 
     <build>

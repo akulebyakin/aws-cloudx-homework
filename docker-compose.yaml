@@ -1,7 +1,19 @@
 version: '3.4'
 
 services:
-  product-api:
-    image: product-api
+  aws-cloudx-homework:
+    image: aws-cloudx-homework
+    environment:
+      AWS_XRAY_DAEMON_ADDRESS: "aws-xray:2000"
     ports:
-      - "8080:8080"
+      - "8081:8080"
+
+  aws-xray:
+    image: amazon/aws-xray-daemon
+    environment:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_REGION: "eu-north-1"
+    command: --local-mode
+    ports:
+      - "2000:2000/udp"

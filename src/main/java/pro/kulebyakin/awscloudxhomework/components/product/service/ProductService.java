@@ -1,5 +1,6 @@
 package pro.kulebyakin.awscloudxhomework.components.product.service;
 
+import com.amazonaws.xray.spring.aop.XRayEnabled;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import pro.kulebyakin.awscloudxhomework.components.product.repo.ProductRepositor
 import pro.kulebyakin.awscloudxhomework.core.service.CrudService;
 
 @Service
+@XRayEnabled
 @RequiredArgsConstructor
 public class ProductService extends CrudService<Product> {
 
