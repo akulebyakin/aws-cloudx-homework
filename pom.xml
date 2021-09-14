@@ -19,6 +19,39 @@
         <java.version>11</java.version>
     </properties>
 
+    <build>
+        <finalName>aws-homework</finalName>
+        <plugins>
+            <!--            <plugin>-->
+            <!--                <groupId>org.springframework.boot</groupId>-->
+            <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--            </plugin>-->
+            <plugin>
+                <artifactId>maven-shade-plugin</artifactId>
+                <configuration>
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
+                </configuration>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <artifactSet>
+                                <excludes>
+                                    <exclude>org.apache.tomcat.embed:*</exclude>
+                                </excludes>
+                            </artifactSet>
+                        </configuration>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+                <groupId>org.apache.maven.plugins</groupId>
+                <version>3.2.4</version>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -42,8 +75,15 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>2.2.6.RELEASE</version>
+            <version>2.5.4</version>
         </dependency>
+
+        <dependency>
+            <artifactId>aws-serverless-java-container-springboot2</artifactId>
+            <groupId>com.amazonaws.serverless</groupId>
+            <version>1.6</version>
+        </dependency>
+
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -54,42 +94,7 @@
             <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.5.9</version>
-        </dependency>
-        <dependency>
             <artifactId>aws-xray-recorder-sdk-core</artifactId>
-            <groupId>com.amazonaws</groupId>
-            <version>2.9.1</version>
-        </dependency>
-        <dependency>
-            <artifactId>aws-xray-recorder-sdk-apache-http</artifactId>
-            <groupId>com.amazonaws</groupId>
-            <version>2.9.1</version>
-        </dependency>
-        <dependency>
-            <artifactId>aws-xray-recorder-sdk-aws-sdk</artifactId>
-            <groupId>com.amazonaws</groupId>
-            <version>2.9.1</version>
-        </dependency>
-        <dependency>
-            <artifactId>aws-xray-recorder-sdk-aws-sdk-v2</artifactId>
-            <groupId>com.amazonaws</groupId>
-            <version>2.9.1</version>
-        </dependency>
-        <dependency>
-            <artifactId>aws-xray-recorder-sdk-aws-sdk-instrumentor</artifactId>
-            <groupId>com.amazonaws</groupId>
-            <version>2.9.1</version>
-        </dependency>
-        <dependency>
-            <artifactId>aws-xray-recorder-sdk-aws-sdk-v2-instrumentor</artifactId>
-            <groupId>com.amazonaws</groupId>
-            <version>2.9.1</version>
-        </dependency>
-        <dependency>
-            <artifactId>aws-xray-recorder-sdk-sql-mysql</artifactId>
             <groupId>com.amazonaws</groupId>
             <version>2.9.1</version>
         </dependency>
@@ -98,15 +103,13 @@
             <groupId>com.amazonaws</groupId>
             <version>2.9.1</version>
         </dependency>
-    </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+        <!--DynamoDB-->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-dynamodb</artifactId>
+            <version>1.12.62</version>
+        </dependency>
+    </dependencies>
 
 </project>

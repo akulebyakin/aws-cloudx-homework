@@ -1,13 +1,11 @@
-package pro.kulebyakin.awscloudxhomework.core.awsxray;
+package pro.kulebyakin.awscloudxhomework.core.aws.xray;
 
 import com.amazonaws.xray.javax.servlet.AWSXRayServletFilter;
 import javax.servlet.Filter;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class AwsXrayConfig {
-    @Bean
+    //    @Bean
     public Filter TracingFilter() {
         return new AWSXRayServletFilter("aws-homework");
     }

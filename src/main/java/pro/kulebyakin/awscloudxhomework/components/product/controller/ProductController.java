@@ -42,4 +42,10 @@ public class ProductController {
     public Product addProductById(@PathVariable Long id, @RequestParam Integer quantity) {
         return productService.addProductById(id, quantity);
     }
+
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public String sayHello() {
+        return "Hello from aws-homework app";
+    }
 }
